@@ -1,0 +1,18 @@
+clear; clc; close all;
+
+params = {'\eta', '\lambda_f', 'k', 'C_f'};
+true_vals = [0.4, 0.1728, 0.1, 1.6];
+inv_vals  = [0.398343026638031, 0.17087575793266296, 0.1000002920627594, 1.5667058229446411];
+
+rel_err =abs(inv_vals - true_vals) ./ abs(true_vals) * 100;
+% rel_err = 100-rel_err;
+
+figure('Position',[100 100 800 500]);
+bar(rel_err, 'LineWidth', 1.2);
+
+set(gca, 'XTick', 1:length(params), 'XTickLabel', params, 'FontSize', 13);
+xlabel('Parameter', 'FontSize', 13);
+ylabel('Relative error (%)', 'FontSize', 13);
+grid on;
+box on;
+title('Relative errors of identified parameters', 'FontSize', 14);
