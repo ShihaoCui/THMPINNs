@@ -52,3 +52,4 @@ scatter(depth_fine, T0_fine, 20, 'filled')
 xlabel('Depth (m)')
 ylabel('Temperature (°C)')
 legend('Original data','Interpolated curve','Interpolated points')
+
